@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Create and save a personal profile card.">
+  <title>User Profile Card Generator</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="topbar">
+    <a class="brand" href="/">✦ ProfileCraft</a>
+    <span class="top-note">Build your digital identity</span>
+  </header>
+
+  <main class="layout">
+    <section class="intro">
+      <p class="eyebrow">PROFILE BUILDER</p>
+      <h1>Your profile.<br><span>Your story.</span></h1>
+      <p class="intro-copy">Enter your details, preview your profile card instantly, and save it to the database.</p>
+      <div class="mini-points">
+        <span>✓ Live preview</span>
+        <span>✓ Server-side processing</span>
+        <span>✓ Database storage</span>
+      </div>
+    </section>
+
+    <section class="workspace">
+      <form id="profileForm" class="form-panel">
+        <div class="section-heading">
+          <div><p class="eyebrow">01 / YOUR DETAILS</p><h2>Create a profile</h2></div>
+          <span class="step">01</span>
+        </div>
+
+        <label for="name">Full name <span>*</span></label>
+        <input id="name" name="name" maxlength="60" placeholder="e.g. Alex Morgan" required>
+
+        <label for="bio">Short bio <span>*</span></label>
+        <textarea id="bio" name="bio" maxlength="280" rows="3" placeholder="Tell people what you do and what you enjoy..." required></textarea>
+        <div class="field-hint">Maximum 280 characters.</div>
+
+        <label for="skills">Skills <small>(comma separated)</small></label>
+        <input id="skills" name="skills" maxlength="300" placeholder="Java, Web Development, SQL">
+
+        <div class="two-col">
+          <div><label for="github">GitHub URL</label><input id="github" name="github" type="url" placeholder="https://github.com/username"></div>
+          <div><label for="linkedin">LinkedIn URL</label><input id="linkedin" name="linkedin" type="url" placeholder="https://linkedin.com/in/username"></div>
+        </div>
+        <label for="portfolio">Portfolio URL</label>
+        <input id="portfolio" name="portfolio" type="url" placeholder="https://yourportfolio.com">
+
+        <button class="primary-btn" id="saveBtn" type="submit">Save profile <span>→</span></button>
+        <p id="status" class="status" role="status" aria-live="polite"></p>
+        <p class="privacy-note">Your profile details are sent to the server and saved in the configured database.</p>
+      </form>
+
+      <aside class="preview-panel">
+        <div class="section-heading">
+          <div><p class="eyebrow">02 / LIVE PREVIEW</p><h2>Profile card</h2></div>
+          <span class="live-dot">LIVE</span>
+        </div>
+        <article class="profile-card">
+          <div class="card-banner"><span class="banner-mark">✦</span></div>
+          <div class="avatar" id="avatar">A</div>
+          <div class="card-content">
+            <p class="card-label">PERSONAL PROFILE</p>
+            <h3 id="previewName">Your Name</h3>
+            <p id="previewBio" class="preview-bio">Your short bio will appear here. Share what makes you, you.</p>
+            <div id="previewSkills" class="skill-list"><span class="placeholder-skill">Your skills</span></div>
+            <div id="previewLinks" class="social-links"></div>
+          </div>
+          <div class="card-footer"><span>PROFILECRAFT</span><span>CREATED WITH PURPOSE</span></div>
+        </article>
+        <div id="savedBox" class="saved-box hidden">
+          <strong>✓ Profile saved</strong>
+          <p>Your record is in the database.</p>
+          <a id="profileLink" href="#" target="_blank" rel="noopener">Open server-generated profile →</a>
+        </div>
+        <p class="preview-tip">Tip: Fill in the form to see your card update as you type.</p>
+      </aside>
+    </section>
+  </main>
+  <footer>Made with care · User Profile Card Generator</footer>
+  <script src="app.js"></script>
+</body>
+</html>
